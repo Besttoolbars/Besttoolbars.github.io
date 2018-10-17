@@ -3,7 +3,23 @@
 ## Introduction
 Types, interfaces, and classes help to describe a domain model and help to structure code. It brings certainty and consistency in the data flow by language itself.
 
-However, sometimes domain types are wrapped by some infrastructure information or some common structure, especially on integration layers(REST, libs). [Or introduce some level of abstraction]
+However, to create reusable and flexible functionality or components, we need to cover all cases or somehow generify type of data flow.
+
+We can use the generics for that purpose.
+
+## That is a Generic?
+Generics came from statically typed languages like Java and C#. 
+
+Generics was designed to allow a type or method to operate on objects of various types while providing compile-time type safety. However, it does not provide runtime type safety in typescript.
+
+Generic helps achieve reusability and "open" type within the same code structure.
+
+Generics can take full advantage of covariance and contravariance.
+
+The use cases of generics:
+1. Libs
+2. Reusable components/function
+3. Advance typing
 
 ## Wrapper example
 Let’s consider an example of a common wrapper structure where one of the fields is determined by domain logic.
@@ -43,7 +59,7 @@ There are four key points:
 
 3. Instantiate object wrapper as `Wrapper<string>`. So `string` is our generic type, and that means that `value` has type string at compile time.
 
-Let's look at places where we use generics but even don’t notice it - Promise and prototype methods (and most of an libs).
+Let's look at places where we use generics but even don’t notice it - Promise and prototype methods (and most of a lib).
 
 ## Generics in a promise
 
